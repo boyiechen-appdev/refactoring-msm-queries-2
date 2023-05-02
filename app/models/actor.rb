@@ -21,7 +21,7 @@ class Actor < ApplicationRecord
   #   return the_many
   # end
 
-  has_many(:filmography, { :through => "character", :source => "movie" })
+  has_many(:filmography, { :through => "characters", :source => "movie" })
 
   # def filmography
   #   the_many = Array.new
