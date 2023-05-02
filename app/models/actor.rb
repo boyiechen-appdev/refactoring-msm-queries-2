@@ -21,17 +21,17 @@ class Actor < ApplicationRecord
   #   return the_many
   # end
 
-  # has_many( :filmography, { :foreign_key => "character", class_name => "Character" })
+  has_many(:filmography, { :through => "character", :source => "movie" })
 
-  def filmography
-    the_many = Array.new
+  # def filmography
+  #   the_many = Array.new
 
-    self.characters.each do |joining_record|
-      destination_record = joining_record.movie
+  #   self.characters.each do |joining_record|
+  #     destination_record = joining_record.movie
 
-      the_many.push(destination_record)
-    end
+  #     the_many.push(destination_record)
+  #   end
 
-    return the_many
-  end
+  #   return the_many
+  # end
 end
